@@ -30,8 +30,9 @@ aside {
 
 html,
 body {
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
+  background: rgb(235, 235, 235);
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
@@ -82,7 +83,37 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
-
+/* универсальные теги */
+.capital::first-letter {
+  text-transform: capitalize;
+}
+.with__discount {
+  color: rgb(45, 50, 66);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -2px;
+}
+.without__discount {
+  color: rgb(149, 151, 159);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 110%;
+  text-decoration: line-through rgb(149, 151, 159);
+}
+.comment {
+  color: rgb(47, 67, 83);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+}
+.active__tariff {
+  border: 2px solid rgb(1, 185, 197);
+  border-radius: 20px;
+  background: rgba(1, 185, 197, 0.05);
+  padding: 45px 10px 15px 23px;
+  cursor: pointer;
+}
 /* header */
 
 .header {
@@ -133,6 +164,114 @@ h6 {
   line-height: 130%;
   text-align: center;
 }
+/* main */
 .main {
-  background: rgb(235, 235, 235);
+  padding-top: 28px;
 }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.main__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 1%;
+  margin-bottom: 98px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.main__row {
+  display: flex;
+  justify-content: space-between;
+}
+/* первый ряд тарифов */
+.tariffs__first-row {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 12px;
+  margin-bottom: 40px;
+}
+.first__row-item {
+  /* max-width: 187px;
+  width: 100%; */
+  padding: 45px 10px 15px 23px;
+  border: 2px solid rgb(211, 214, 221);
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.item__title {
+  color: rgb(104, 112, 120);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: left;
+  margin-bottom: 21px;
+}
+.with__discount-item {
+  text-align: left;
+}
+.without__discount-item {
+  margin-bottom: 18px;
+  text-align: right;
+}
+.item__comment {
+  max-width: 117px;
+  text-align: center;
+}
+/* пожизненный тариф */
+.tariffs__lifeLong {
+  max-width: 585px;
+  border: 2px solid rgb(211, 214, 221);
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  padding: 23px 51px 23px 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+
+.lifeLong__title {
+  color: rgb(45, 50, 66);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: left;
+  margin-right: 20px;
+}
+.lifeLong__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 40px;
+}
+/* футер тарифов */
+.results {
+  color: rgb(45, 50, 66);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 130%;
+  text-align: left;
+  margin-bottom: 25px;
+}
+.tariffs__btn {
+  margin-top: 50px;
+  padding: 28px 100px 28px 100px;
+  border-radius: 60px;
+  background: rgb(253, 77, 53);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+/* скидки рыжий значок, как правильно реализовать(картинка или элемент) 
+смайлы как правильно установить?
+паддинг у first row item, заголовок в дев моде 30px
+text align у without discount можно ли через маргин отстроить?*/
+
+/* под общую ширину отстроить, предложить свои варианты */
+/* results br или макс ширина? */

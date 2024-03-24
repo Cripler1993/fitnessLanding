@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header class="header">
       <div class="header__row">
-        <p class="header__title">скидка действует:</p>
+        <p class="header__title capital">скидка действует:</p>
         <div class="time">
           <div>
             <p class="time__numbers">09</p>
@@ -27,18 +28,62 @@
       </div>
     </header>
     <main class="main">
-      <h1>выберите подходящий план</h1>
       <section class="container">
-        <img src="" alt="" />
-        <div>
-          <div class="tarrifs__first-row"></div>
-          <div class="tarrifs__lifeLong"></div>
-          <p></p>
+        <h1 class="main__title">выберите подходящий план</h1>
+        <div class="main__row">
+          <img src="./img/muscleGuy.png" alt="" />
           <div>
-            <input type="checkbox" />
-            <p></p>
+            <div class="tariffs__first-row">
+              <div id="tariffs" class="first__row-item">
+                <h3 class="item__title">1 неделя</h3>
+                <p class="with__discount with__discount-item">669₽</p>
+                <p class="without__discount without__discount-item">999₽</p>
+                <p class="comment item__comment capital">
+                  чтобы просто начать 👍🏻
+                </p>
+              </div>
+              <div id="tariffs" class="first__row-item">
+                <h3 class="item__title">1 неделя</h3>
+                <p class="with__discount with__discount-item">999₽</p>
+                <p class="without__discount without__discount-item">999₽</p>
+                <p class="comment item__comment capital">
+                  привести тело впорядок 💪🏻
+                </p>
+              </div>
+              <div id="tariffs" class="first__row-item">
+                <h3 class="item__title">1 неделя</h3>
+                <p class="with__discount with__discount-item">2990₽</p>
+                <p class="without__discount without__discount-item">999₽</p>
+                <p class="comment item__comment capital">
+                  изменить образ жизни 🔥
+                </p>
+              </div>
+            </div>
+            <div id="tariffs" class="tariffs__lifeLong">
+              <h3 class="lifeLong__title capital">навсегда</h3>
+              <div class="lifeLong__price">
+                <p class="with__discount">5990₽</p>
+                <p class="without__discount">18990₽</p>
+              </div>
+              <p class="comment lifeLong__comment capital">
+                всегда быть в форме и поддерживать своё здоровье ⭐️
+              </p>
+            </div>
+            <p class="results capital">
+              cледуя плану на 3 месяца, люди получают в 2 раза лучший результат,
+              чем за 1 месяц
+            </p>
+            <div>
+              <form action="">
+                <input id="services__rules" type="checkbox" />
+                <label for="services__rules"
+                  >Я соглашаюсь с Правилами сервиса и условиями Публичной
+                  оферты.
+                </label>
+              </form>
+            </div>
+            <button class="tariffs__btn">купить</button>
           </div>
-          <button></button>
         </div>
       </section>
     </main>
