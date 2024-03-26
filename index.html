@@ -19,7 +19,7 @@
         <p class="header__title capital">скидка действует:</p>
         <div class="time">
           <div>
-            <p class="time__numbers">09</p>
+            <p id="minutes" class="time__numbers">02</p>
             <p class="time__unit">минут</p>
           </div>
           <div>
@@ -27,7 +27,7 @@
             <p class="time__circle"></p>
           </div>
           <div>
-            <p class="time__numbers">59</p>
+            <p id="seconds" class="time__numbers">00</p>
             <p class="time__unit">секунд</p>
           </div>
         </div>
@@ -35,7 +35,7 @@
     </header>
     <main class="main">
       <section class="container">
-        <h1 class="main__title">выберите подходящий план</h1>
+        <h1 class="main__title">выберите подходящий тарифный план</h1>
         <div class="main__row">
           <div class="main__img">
             <img src="./img/img.png" alt="накаченный парень" />
@@ -129,49 +129,62 @@
               <span style="color: rgb(1, 185, 197)">лёгкого старта 🏃‍♂️</span>
             </div>
           </div>
-          <p>Посмотри, что мы для тебя приготовили 🔥</p>
+          <p class="modal__look capital">
+            посмотри, что мы для тебя приготовили 🔥
+          </p>
           <div class="modal__discounts">
             <div class="discount__item">
-              <div>
-                <label for="discounts">1 неделя</label
-                ><input id="discounts" type="radio" />
+              <div class="discount__item-checkbox">
+                <label class="custom-label" for="discounts">1 неделя</label>
+                <input class="custom-radio" id="discounts" type="radio" />
               </div>
-              <div>999₽</div>
-              <div></div>
-              <div></div>
-            </div>
-            <div>
-              <p>599₽</p>
-              <div class="modal__item-discount">-40%</div>
+              <div class="discount__item-without">
+                <div class="without__price">999₽</div>
+                <div class="without__cross-1"></div>
+                <div class="without__cross-2"></div>
+              </div>
+              <div class="discout__item-line"></div>
+              <div class="discount__item-price">
+                <p>599₽</p>
+                <div class="discount__item-percentage">-40%</div>
+              </div>
             </div>
             <div class="discount__item">
-              <div>
-                <label for="discounts">1 неделя</label
-                ><input id="discounts" type="radio" />
+              <div class="discount__item-checkbox">
+                <label class="custom-label" for="discounts">1 месяц</label>
+                <input class="custom-radio" id="discounts" type="radio" />
               </div>
-              <div>999₽</div>
-              <div></div>
-              <div></div>
-            </div>
-            <div>
-              <p>599₽</p>
-              <div class="modal__item-discount">-40%</div>
+              <div class="discount__item-without">
+                <div class="without__price">1690₽</div>
+                <div class="without__cross-1"></div>
+                <div class="without__cross-2"></div>
+              </div>
+              <div class="discout__item-line"></div>
+              <div class="discount__item-price">
+                <p>799₽</p>
+                <div class="discount__item-percentage">-50%</div>
+              </div>
             </div>
             <div class="discount__item">
-              <div>
-                <label for="discounts">1 неделя</label
-                ><input id="discounts" type="radio" />
+              <div class="discount__item-checkbox">
+                <label class="custom-label" for="discounts">3 месяца</label>
+                <input class="custom-radio" id="discounts" type="radio" />
               </div>
-              <div>999₽</div>
-              <div></div>
-              <div></div>
-            </div>
-            <div>
-              <p>599₽</p>
-              <div class="modal__item-discount">-40%</div>
+              <div class="discount__item-without">
+                <div class="without__price">5990₽</div>
+                <div class="without__cross-1"></div>
+                <div class="without__cross-2"></div>
+              </div>
+              <div class="discout__item-line"></div>
+              <div class="discount__item-price">
+                <p>1690₽</p>
+                <div class="discount__item-percentage">-60%</div>
+              </div>
             </div>
           </div>
-          <button class="capital">начать тренироваться</button>
+          <div class="modal__btn">
+            <button class="capital">начать тренироваться</button>
+          </div>
         </div>
       </section>
     </main>

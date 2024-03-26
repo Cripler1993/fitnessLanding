@@ -39,7 +39,7 @@ body {
   -ms-text-size-adjust: 100%;
   -mos-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: PtRootRegular;
   overflow-x: hidden;
 }
 
@@ -83,6 +83,10 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+@font-face {
+  font-family: PtRootRegular;
+  src: url("/fonts/PT-Root-UI_Regular.ttf");
+}
 /* универсальные теги */
 .capital::first-letter {
   text-transform: capitalize;
@@ -115,6 +119,7 @@ h6 {
   border: 2px solid rgb(1, 185, 197);
   background: rgba(1, 185, 197, 0.05);
 }
+
 /* header */
 
 .header {
@@ -135,7 +140,6 @@ h6 {
 .time {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   margin-left: 14px;
   column-gap: 5px;
 }
@@ -144,7 +148,6 @@ h6 {
   font-size: 60px;
   font-weight: 400;
   line-height: 103%;
-  /* text-align: center; */
   text-transform: uppercase;
 }
 
@@ -165,9 +168,19 @@ h6 {
   line-height: 130%;
   text-align: center;
 }
+.time__numbers-red {
+  color: rgb(190, 26, 26);
+  animation: brighten 2s infinite;
+}
+.time__circle-red {
+  background-color: rgb(190, 26, 26);
+  animation: brightenCircles 2s infinite;
+}
+
 /* main */
 .main {
   padding-top: 28px;
+  padding-bottom: 40px;
 }
 .container {
   max-width: 1100px;
@@ -203,6 +216,8 @@ h6 {
   margin-bottom: 40px;
 }
 .first__row-item {
+  max-width: 187px;
+  width: 100%;
   padding: 45px 10px 15px 23px;
   border-radius: 20px;
   cursor: pointer;
@@ -303,6 +318,7 @@ input[type="checkbox"] {
   height: 24px;
   border-radius: 4.8px;
   cursor: pointer;
+  transition: all 0.2s ease 0s;
 }
 label {
   color: rgb(149, 151, 159);
@@ -317,6 +333,7 @@ input[type="checkbox"]:after {
   color: white;
   display: none;
 }
+
 input[type="checkbox"]:checked {
   background-color: rgb(1, 185, 197);
 }
@@ -333,6 +350,9 @@ input[type="checkbox"]:checked::after {
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
+}
+.tariffs__btn:hover {
+  animation: blink 1.3s infinite;
 }
 .tariffs__agreement {
   margin-top: 30px;
@@ -354,14 +374,19 @@ input[type="checkbox"]:checked::after {
   top: 0px;
   left: 0px;
   z-index: 2;
+  display: none;
 }
 .modal {
   position: relative;
-  margin: 0 auto;
   padding: 0px 40px 40px 40px;
   max-width: 750px;
   background: rgb(245, 247, 247);
   z-index: 3;
+}
+.modal__close {
+  position: absolute;
+  right: 18px;
+  top: 18px;
 }
 .modal__suggestion {
   display: inline-block;
@@ -401,7 +426,6 @@ input[type="checkbox"]:checked::after {
   margin-bottom: 8px;
 }
 .modal__easy-start {
-  display: inline-block;
   padding: 12px 26px 16px 28px;
   border: 1.5px solid rgb(1, 185, 197);
   border-radius: 30px;
@@ -409,6 +433,160 @@ input[type="checkbox"]:checked::after {
   font-weight: 700;
   line-height: 130%;
 }
+.modal__look {
+  color: rgb(18, 25, 29);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 130%;
+  margin-bottom: 13px;
+}
+.modal__discounts {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+.discount__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 210px;
+  padding: 26px 22px 20px 26px;
+  border: 2px solid rgb(231, 234, 241);
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+}
+.discount__item-checkbox {
+  /* display: flex;
+  justify-content: space-between;
+  max-width: 210px; */
+  margin-bottom: 14px;
+}
+.custom-radio {
+  display: none;
+}
+.custom-label {
+  color: black;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.custom-label::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border: 2.18px solid rgb(85, 89, 101);
+  border-radius: 50%;
+}
+.custom-radio:checked + .custom-label::after {
+  width: 11px;
+  height: 11px;
+  background: green;
+  border-radius: 50%;
+}
+.discount__item-without {
+  position: relative;
+  margin-bottom: 16px;
+}
+.without__price {
+  color: rgb(104, 112, 120);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 110%;
+}
+.without__cross-1 {
+  position: absolute;
+  top: 9px;
+  left: -5px;
+  width: 50px;
+  height: 2px;
+  background-color: rgb(253, 77, 53);
+  transform: rotate(18.1deg);
+}
+.without__cross-2 {
+  position: absolute;
+  top: 9px;
+  left: -5px;
+  width: 50px;
+  height: 2px;
+  background-color: rgb(253, 77, 53);
+  transform: rotate(-18.1deg);
+}
+.discout__item-line {
+  width: 134px;
+  height: 1px;
+  background-color: rgb(231, 234, 241);
+  margin-bottom: 24px;
+}
+.discount__item-price {
+  position: relative;
+}
+.discount__item-price p {
+  color: rgb(45, 50, 66);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 110%;
+}
+.discount__item-percentage {
+  position: absolute;
+  top: -15px;
+  right: -55px;
+  background-image: url(./img/Star.png);
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 13.33px;
+  font-weight: 500;
+  line-height: 130%;
+}
+.modal__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.modal__btn button {
+  padding: 20px 42px 22px 42px;
+  border-radius: 30px;
+  background: rgb(253, 77, 53);
+  color: rgb(255, 255, 255);
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes brighten {
+  50% {
+    color: rgba(255, 255, 255, 0.423);
+  }
+}
+@keyframes brightenCircles {
+  50% {
+    background-color: rgba(255, 255, 255, 0.423);
+  }
+}
+
 /* еще раз отсмотреть линию тарифов, шрифт заголовка по фигме явно меньше, фикс ширина?
 /* что сделать с фоткой мужика низ */
 
