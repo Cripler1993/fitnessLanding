@@ -32,7 +32,7 @@ html,
 body {
   width: 100%;
   margin: 0 auto;
-  background: rgb(235, 235, 235);
+  background: rgba(245, 247, 247, 1);
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
@@ -83,6 +83,10 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+body {
+  position: relative;
+  overflow: hidden;
+}
 @font-face {
   font-family: PtRootRegular;
   src: url("/fonts/PT-Root-UI_Regular.ttf");
@@ -120,9 +124,21 @@ h6 {
   background: rgba(1, 185, 197, 0.05);
 }
 
+@media (max-width: 1020px) {
+  .with__discount {
+    font-size: 44px;
+  }
+  .without__discount {
+    font-size: 20px;
+  }
+}
 /* header */
 
 .header {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  width: 100%;
   background: rgb(255, 255, 255);
   padding: 12px 0px;
 }
@@ -144,11 +160,13 @@ h6 {
   column-gap: 5px;
 }
 .time__numbers {
+  font-family: "Bebas Neue", sans-serif;
   color: rgb(1, 185, 197);
   font-size: 60px;
   font-weight: 400;
   line-height: 103%;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .time__circle {
@@ -179,6 +197,7 @@ h6 {
 
 /* main */
 .main {
+  margin-top: 110px;
   padding-top: 28px;
   padding-bottom: 40px;
 }
@@ -200,18 +219,72 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
-.main__img img {
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
+
 .main__row-right {
   max-width: 585px;
   width: 100%;
 }
+@media (max-width: 820px) {
+  .main__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+  }
+  .container {
+    max-width: 585px;
+    padding: 0px 15px;
+  }
+  .main__title {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 615px) {
+  .main__title {
+    font-size: 24px;
+    text-align: left;
+  }
+  .main__img img {
+    width: 277px;
+  }
+  .container {
+    max-width: 465px;
+  }
+}
+@media (max-width: 500px) {
+  .main {
+    padding-bottom: 20px;
+  }
+}
+@media (max-width: 420px) {
+  .header__title {
+    font-size: 16px;
+  }
+  .time {
+    margin-left: 20px;
+    column-gap: 15px;
+  }
+  .time__numbers {
+    font-size: 40px;
+  }
+  .time__circle {
+    width: 4px;
+    height: 4px;
+  }
+  .time__circle:first-child {
+    margin-top: 12px;
+  }
+  .time__unit {
+    font-size: 14px;
+  }
+  .main {
+    margin-top: 80px;
+  }
+}
 /* первый ряд тарифов */
 .tariffs__first-row {
   display: flex;
-  justify-content: flex-start;
   column-gap: 12px;
   margin-bottom: 40px;
 }
@@ -227,7 +300,7 @@ h6 {
 
 .item__title {
   color: rgb(104, 112, 120);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 100%;
   text-transform: uppercase;
@@ -239,12 +312,16 @@ h6 {
 .with__discount-item {
   text-align: left;
 }
+
 .without__discount-item {
   margin-bottom: 18px;
   text-align: center;
+  opacity: 1;
+  transition: all 0.6s ease 0s;
 }
 .item__comment {
   max-width: 117px;
+  margin: 0 auto;
   text-align: center;
 }
 .item__discount {
@@ -262,7 +339,54 @@ h6 {
   font-size: 18px;
   font-weight: 500;
   line-height: 130%;
+  opacity: 1;
+  transition: all 0.6s ease 0s;
 }
+@media (max-width: 1020px) {
+  .tariffs__first-row {
+    flex-direction: column;
+    column-gap: 0px;
+    row-gap: 10px;
+    margin-bottom: 10px;
+  }
+  .first__row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 585px;
+    padding: 30px 51px 28px 24px;
+  }
+  .item__title {
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
+  .item__price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+  }
+  .without__discount-item {
+    margin-bottom: 0px;
+  }
+  .item__comment {
+    display: none;
+  }
+  .item__discount {
+    top: 3px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    font-size: 13.33px;
+  }
+}
+@media (max-width: 390px) {
+  .item__title {
+    font-size: 20px;
+  }
+}
+
 /* пожизненный тариф */
 .tariffs__lifeLong {
   position: relative;
@@ -273,6 +397,7 @@ h6 {
   align-items: center;
   margin-bottom: 13px;
   cursor: pointer;
+  transition: all 0.3s ease 0s;
 }
 
 .lifeLong__title {
@@ -287,8 +412,47 @@ h6 {
 .lifeLong__price {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-end;
   margin-right: 40px;
+}
+.lifeLong__price p:first-child {
+  margin-top: 7px;
+}
+.adaptive__comment {
+  display: none;
+}
+
+@media (max-width: 1020px) {
+  .tariffs__lifeLong {
+    margin-bottom: 12px;
+    padding: 30px 51px 28px 24px;
+  }
+  .adaptive__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12.5px;
+    margin-right: 15px;
+  }
+  .lifeLong__comment {
+    display: none;
+  }
+  .adaptive__comment {
+    display: block;
+    text-align: left;
+  }
+  .lifeLong__title {
+    font-size: 24px;
+    margin-right: 0px;
+  }
+  .lifeLong__price {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .lifeLong__title {
+    font-size: 20px;
+  }
 }
 /* футер тарифов */
 .results {
@@ -299,6 +463,7 @@ h6 {
   text-align: left;
   margin-bottom: 25px;
 }
+
 /* чек бокс */
 .tariffs__checkbox {
   max-width: 454px;
@@ -314,7 +479,7 @@ input[type="checkbox"] {
   align-content: center;
   justify-content: center;
   border: 2px solid rgb(1, 185, 197);
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   border-radius: 4.8px;
   cursor: pointer;
@@ -328,6 +493,7 @@ label {
 }
 input[type="checkbox"]:after {
   content: "✔";
+
   font-weight: 700;
   font-size: 14px;
   color: white;
@@ -350,10 +516,9 @@ input[type="checkbox"]:checked::after {
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
-}
-.tariffs__btn:hover {
   animation: blink 1.3s infinite;
 }
+
 .tariffs__agreement {
   margin-top: 30px;
   color: rgb(129, 135, 152);
@@ -361,6 +526,21 @@ input[type="checkbox"]:checked::after {
   font-weight: 400;
   line-height: 130%;
 }
+
+@media (max-width: 500px) {
+  .results {
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+  .tariffs__btn {
+    margin-top: 18px;
+    width: 100%;
+  }
+  .tariffs__agreement {
+    display: none;
+  }
+}
+
 /* модальное окно */
 
 .modal__wrapper {
@@ -375,11 +555,13 @@ input[type="checkbox"]:checked::after {
   left: 0px;
   z-index: 2;
   display: none;
+  overflow: scroll;
 }
 .modal {
   position: relative;
   padding: 0px 40px 40px 40px;
   max-width: 750px;
+  width: 100%;
   background: rgb(245, 247, 247);
   z-index: 3;
 }
@@ -387,6 +569,7 @@ input[type="checkbox"]:checked::after {
   position: absolute;
   right: 18px;
   top: 18px;
+  cursor: pointer;
 }
 .modal__suggestion {
   display: inline-block;
@@ -442,53 +625,71 @@ input[type="checkbox"]:checked::after {
 }
 .modal__discounts {
   display: flex;
-  justify-content: center;
-  column-gap: 20px;
+  justify-content: space-between;
 }
+@media (max-width: 800px) {
+  .modal {
+    max-width: 600px;
+    height: 778px;
+    padding: 0px 20px 20px 20px;
+  }
+  .modal__look {
+    text-align: center;
+  }
+  .modal__discounts {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+  }
+}
+@media (max-width: 500px) {
+  .modal__look {
+    font-size: 15px;
+  }
+  .modal__suggestion {
+    transform: translate(-20px, 0px);
+    font-size: 14px;
+    margin-bottom: 21px;
+  }
+}
+/* модальное окно предложения */
 .discount__item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 210px;
+  width: 210px;
   padding: 26px 22px 20px 26px;
   border: 2px solid rgb(231, 234, 241);
   border-radius: 20px;
   background: rgb(255, 255, 255);
+  cursor: pointer;
 }
+
 .discount__item-checkbox {
-  /* display: flex;
+  display: flex;
   justify-content: space-between;
-  max-width: 210px; */
+  width: 100%;
   margin-bottom: 14px;
 }
 .custom-radio {
-  display: none;
-}
-.custom-label {
-  color: black;
-  cursor: pointer;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 100%;
-  text-transform: uppercase;
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-}
-.custom-label::after {
-  content: "";
   width: 22px;
   height: 22px;
   border: 2.18px solid rgb(85, 89, 101);
   border-radius: 50%;
 }
-.custom-radio:checked + .custom-label::after {
-  width: 11px;
-  height: 11px;
-  background: green;
-  border-radius: 50%;
+.custom-label {
+  color: black;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
+
 .discount__item-without {
   position: relative;
   margin-bottom: 16px;
@@ -502,7 +703,7 @@ input[type="checkbox"]:checked::after {
 .without__cross-1 {
   position: absolute;
   top: 9px;
-  left: -5px;
+  left: 2px;
   width: 50px;
   height: 2px;
   background-color: rgb(253, 77, 53);
@@ -511,7 +712,7 @@ input[type="checkbox"]:checked::after {
 .without__cross-2 {
   position: absolute;
   top: 9px;
-  left: -5px;
+  left: 2px;
   width: 50px;
   height: 2px;
   background-color: rgb(253, 77, 53);
@@ -535,7 +736,7 @@ input[type="checkbox"]:checked::after {
 .discount__item-percentage {
   position: absolute;
   top: -15px;
-  right: -55px;
+  right: -50px;
   background-image: url(./img/Star.png);
   width: 50px;
   height: 50px;
@@ -565,6 +766,33 @@ input[type="checkbox"]:checked::after {
   line-height: 20px;
 }
 
+@media (max-width: 800px) {
+  .discount__item {
+    width: 100%;
+    padding: 24px 20px 18px 20px;
+    position: relative;
+  }
+  .discout__item-line {
+    display: none;
+  }
+  .discount__item-percentage {
+    top: -15px;
+    right: -50px;
+    width: 40px;
+    height: 40px;
+    font-size: 10.67px;
+  }
+  .discount__item-without {
+    position: absolute;
+    bottom: 27px;
+    right: 32px;
+    margin-bottom: 0px;
+  }
+  .discount__item-price p {
+    font-size: 44px;
+  }
+}
+
 @keyframes blink {
   0% {
     opacity: 0.5;
@@ -587,10 +815,38 @@ input[type="checkbox"]:checked::after {
   }
 }
 
-/* еще раз отсмотреть линию тарифов, шрифт заголовка по фигме явно меньше, фикс ширина?
-/* что сделать с фоткой мужика низ */
+.active {
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+.hide {
+  opacity: 0;
+}
 
-/* modal suggestion норм ли инлайн блок? */
-/* !подключить последний шрифт */
-/* ! стилизовать чек бокс(гугл) */
+.discount__item-active {
+  border: 2px solid rgb(1, 185, 197);
+  background: rgba(1, 185, 197, 0.05);
+}
+
+.discount__item-active .custom-radio {
+  width: 22px;
+  height: 22px;
+  border: 2.18px solid rgb(1, 185, 197);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.discount__item-active .radio__checked {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(1, 185, 197);
+  border-radius: 50%;
+}
 /* !заглавные у спанов */
+/* ! поменять контент на пустое и поставить бэкграунд имэдж первый чек бокс */
+/* ! отключить возможность двигать окном когда модалка включена*/
+
+/* !написать об ошибке 3 месяца год */

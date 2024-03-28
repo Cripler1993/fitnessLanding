@@ -42,36 +42,78 @@
           </div>
           <div class="main__row-right">
             <div class="tariffs__first-row">
-              <div id="tariffs" class="first__row-item non__active-tariff">
-                <h3 class="item__title">1 неделя</h3>
-                <p class="with__discount with__discount-item">669₽</p>
-                <p class="without__discount without__discount-item">999₽</p>
+              <div
+                data-key="1 неделя"
+                id="tariffs"
+                class="first__row-item non__active-tariff"
+              >
+                <div class="adaptive__column">
+                  <h3 class="item__title">1 неделя</h3>
+                  <p class="comment adaptive__comment capital">
+                    чтобы просто начать 👍🏻
+                  </p>
+                </div>
+                <div class="item__price">
+                  <p class="with__discount with__discount-item">699₽</p>
+                  <p class="without__discount without__discount-item">999₽</p>
+                </div>
                 <p class="comment item__comment capital">
                   чтобы просто начать 👍🏻
                 </p>
                 <div class="item__discount">-30%</div>
               </div>
-              <div id="tariffs" class="first__row-item non__active-tariff">
-                <h3 class="item__title">1 месяц</h3>
-                <p class="with__discount with__discount-item">999₽</p>
-                <p class="without__discount without__discount-item">1690₽</p>
+              <div
+                data-key="1 месяц"
+                id="tariffs"
+                class="first__row-item non__active-tariff"
+              >
+                <div class="adaptive__column">
+                  <h3 class="item__title">1 месяц</h3>
+                  <p class="comment adaptive__comment capital">
+                    привести тело впорядок 💪🏻
+                  </p>
+                </div>
+                <div class="item__price">
+                  <p class="with__discount with__discount-item">999₽</p>
+                  <p class="without__discount without__discount-item">1690₽</p>
+                </div>
                 <p class="comment item__comment capital">
                   привести тело впорядок 💪🏻
                 </p>
                 <div class="item__discount">-40%</div>
               </div>
-              <div id="tariffs" class="first__row-item non__active-tariff">
-                <h3 class="item__title">3 месяца</h3>
-                <p class="with__discount with__discount-item">2990₽</p>
-                <p class="without__discount without__discount-item">5990₽</p>
+              <div
+                data-key="3 месяца"
+                id="tariffs"
+                class="first__row-item non__active-tariff"
+              >
+                <div class="adaptive__column">
+                  <h3 class="item__title">3 месяца</h3>
+                  <p class="comment adaptive__comment capital">
+                    изменить образ жизни 🔥
+                  </p>
+                </div>
+                <div class="item__price">
+                  <p class="with__discount with__discount-item">2990₽</p>
+                  <p class="without__discount without__discount-item">5990₽</p>
+                </div>
                 <p class="comment item__comment capital">
                   изменить образ жизни 🔥
                 </p>
                 <div class="item__discount">-50%</div>
               </div>
             </div>
-            <div id="tariffs" class="tariffs__lifeLong non__active-tariff">
-              <h3 class="lifeLong__title capital">навсегда</h3>
+            <div
+              data-key="навсегда"
+              id="tariffs"
+              class="tariffs__lifeLong non__active-tariff"
+            >
+              <div class="adaptive__column">
+                <h3 class="lifeLong__title capital">навсегда</h3>
+                <p class="comment adaptive__comment capital">
+                  всегда быть в форме⭐️
+                </p>
+              </div>
               <div class="lifeLong__price">
                 <p class="with__discount">5990₽</p>
                 <p class="without__discount">18990₽</p>
@@ -133,10 +175,12 @@
             посмотри, что мы для тебя приготовили 🔥
           </p>
           <div class="modal__discounts">
-            <div class="discount__item">
+            <div data-key="1 неделя" class="discount__item">
               <div class="discount__item-checkbox">
-                <label class="custom-label" for="discounts">1 неделя</label>
-                <input class="custom-radio" id="discounts" type="radio" />
+                <span class="custom-label">1 неделя</span>
+                <div class="custom-radio">
+                  <div class="radio__checked"></div>
+                </div>
               </div>
               <div class="discount__item-without">
                 <div class="without__price">999₽</div>
@@ -149,10 +193,12 @@
                 <div class="discount__item-percentage">-40%</div>
               </div>
             </div>
-            <div class="discount__item">
+            <div data-key="1 месяц" class="discount__item">
               <div class="discount__item-checkbox">
-                <label class="custom-label" for="discounts">1 месяц</label>
-                <input class="custom-radio" id="discounts" type="radio" />
+                <span class="custom-label">1 месяц</span>
+                <div class="custom-radio">
+                  <div class="radio__checked"></div>
+                </div>
               </div>
               <div class="discount__item-without">
                 <div class="without__price">1690₽</div>
@@ -165,10 +211,12 @@
                 <div class="discount__item-percentage">-50%</div>
               </div>
             </div>
-            <div class="discount__item">
+            <div data-key="3 месяца" class="discount__item">
               <div class="discount__item-checkbox">
-                <label class="custom-label" for="discounts">3 месяца</label>
-                <input class="custom-radio" id="discounts" type="radio" />
+                <span class="custom-label">3 месяца</span>
+                <div class="custom-radio">
+                  <div class="radio__checked"></div>
+                </div>
               </div>
               <div class="discount__item-without">
                 <div class="without__price">5990₽</div>
