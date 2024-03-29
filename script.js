@@ -7,7 +7,7 @@ let discountItems = document.querySelectorAll(".discount__item");
 let modalClose = document.querySelector(".modal__close");
 let body = document.querySelector("body");
 
-let time = 1;
+let time = 120;
 
 let allTariffs = {};
 
