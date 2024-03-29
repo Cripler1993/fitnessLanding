@@ -40,7 +40,6 @@ body {
   -mos-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-family: PtRootRegular;
-  overflow-x: hidden;
 }
 
 input,
@@ -85,7 +84,6 @@ h6 {
 }
 body {
   position: relative;
-  overflow: hidden;
 }
 @font-face {
   font-family: PtRootRegular;
@@ -630,8 +628,8 @@ input[type="checkbox"]:checked::after {
 @media (max-width: 800px) {
   .modal {
     max-width: 600px;
-    height: 778px;
     padding: 0px 20px 20px 20px;
+    transform: scale(0.91, 0.91);
   }
   .modal__look {
     text-align: center;
@@ -642,15 +640,48 @@ input[type="checkbox"]:checked::after {
     align-items: center;
     row-gap: 6px;
   }
-}
-@media (max-width: 500px) {
+  .modal__title {
+    font-size: 24px;
+    margin-bottom: 22px;
+    /* text-align: center; */
+  }
+  .modal__start {
+    font-size: 15px;
+  }
   .modal__look {
     font-size: 15px;
   }
+  .modal__easy-start {
+    padding: 12px 26px 16px 28px;
+    font-size: 15px;
+  }
+  .modal__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .modal {
+    max-width: 450px;
+  }
+}
+@media (max-width: 500px) {
   .modal__suggestion {
     transform: translate(-20px, 0px);
     font-size: 14px;
     margin-bottom: 21px;
+  }
+  .modal__title {
+    max-width: 245px;
+    text-align: left;
+    left: 50%;
+    transform: translate(10%, 0);
+  }
+  .modal {
+    max-width: 335px;
+    transform: scale(0.9, 0.9);
   }
 }
 /* модальное окно предложения */
@@ -776,7 +807,7 @@ input[type="checkbox"]:checked::after {
     display: none;
   }
   .discount__item-percentage {
-    top: -15px;
+    top: -10px;
     right: -50px;
     width: 40px;
     height: 40px;
@@ -790,6 +821,15 @@ input[type="checkbox"]:checked::after {
   }
   .discount__item-price p {
     font-size: 44px;
+  }
+  .modal__btn {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .modal__btn button {
+    width: 100%;
+    padding: 20px 34px 22px 34px;
   }
 }
 
@@ -824,6 +864,16 @@ input[type="checkbox"]:checked::after {
 .hide {
   opacity: 0;
 }
+.overflow {
+  overflow: hidden;
+}
+
+.uppercase {
+  display: inline-block;
+}
+.uppercase::first-letter {
+  text-transform: capitalize;
+}
 
 .discount__item-active {
   border: 2px solid rgb(1, 185, 197);
@@ -845,8 +895,3 @@ input[type="checkbox"]:checked::after {
   background-color: rgb(1, 185, 197);
   border-radius: 50%;
 }
-/* !заглавные у спанов */
-/* ! поменять контент на пустое и поставить бэкграунд имэдж первый чек бокс */
-/* ! отключить возможность двигать окном когда модалка включена*/
-
-/* !написать об ошибке 3 месяца год */

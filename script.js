@@ -5,6 +5,7 @@ let timeCircles = document.querySelectorAll(".time__circle");
 let modalWrapper = document.querySelector(".modal__wrapper");
 let discountItems = document.querySelectorAll(".discount__item");
 let modalClose = document.querySelector(".modal__close");
+let body = document.querySelector("body");
 
 let time = 1;
 
@@ -105,10 +106,12 @@ function updateCountdown() {
 
 function modalOpen() {
   modalWrapper.classList.add("active");
+  body.classList.add("overflow");
 }
 
 modalClose.addEventListener("click", function () {
   modalWrapper.classList.add("hidden");
+  body.classList.remove("overflow");
 });
 
 discountItems.forEach((elem) => {
@@ -126,3 +129,33 @@ function clearAllModalTarrifs() {
     elem.classList.remove("discount__item-active");
   });
 }
+
+// GSAP
+
+gsap.from(".header", {
+  duration: 1.5,
+  y: "-100",
+  ease: "power1.out",
+  opacity: -1,
+});
+
+gsap.from(".main__title", {
+  duration: 1.5,
+  opacity: 0,
+  delay: 1.2,
+});
+
+gsap.from(".main__img", {
+  duration: 1.5,
+  delay: 2,
+  x: "-200",
+  opacity: 0,
+  ease: "power2.out",
+});
+gsap.from(".main__row-right", {
+  duration: 1.5,
+  delay: 2,
+  x: "200",
+  opacity: 0,
+  ease: "power2.out",
+});
