@@ -105,7 +105,7 @@ body {
   font-size: 24px;
   font-weight: 500;
   line-height: 110%;
-  text-decoration: line-through rgb(149, 151, 159);
+  text-decoration-line: line-through;
 }
 .comment {
   color: rgb(47, 67, 83);
@@ -474,7 +474,7 @@ input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   border: 2px solid rgb(1, 185, 197);
   min-width: 24px;
@@ -490,11 +490,10 @@ label {
   line-height: 110%;
 }
 input[type="checkbox"]:after {
-  content: "✔";
-
-  font-weight: 700;
-  font-size: 14px;
-  color: white;
+  content: "";
+  background-image: url(./img/Tick.png);
+  width: 16px;
+  height: 12px;
   display: none;
 }
 
@@ -502,7 +501,7 @@ input[type="checkbox"]:checked {
   background-color: rgb(1, 185, 197);
 }
 input[type="checkbox"]:checked::after {
-  display: block;
+  display: flex;
 }
 .tariffs__btn {
   margin-top: 50px;
